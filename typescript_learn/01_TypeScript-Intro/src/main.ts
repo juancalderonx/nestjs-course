@@ -1,7 +1,8 @@
 import './style.css'
 import typescriptLogo from './typescript.svg'
 import { setupCounter } from './counter'
-import { name, age } from './bases/01-types'
+import { name } from './bases/01-types'
+import { pokemon_1 } from './bases/04-classes'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -11,7 +12,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1>Hola ${name}, tienes ${age} años de edad</h1>
+    <h1>Hola ${name}, el pokemon asignado para ti es: ${pokemon_1.name}</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
@@ -21,6 +22,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
 `
 
-console.log(name);
+
+console.log(pokemon_1);
+pokemon_1.speak()
+pokemon_1.twoNames()
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
