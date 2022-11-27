@@ -2,7 +2,8 @@ import './style.css'
 import typescriptLogo from './typescript.svg'
 import { setupCounter } from './counter'
 import { name } from './bases/01-types'
-import { pokemon1, pokemon2 } from './bases/05-injection'
+import { pokemon1 } from './bases/05-injection'
+import { charmander } from './bases/07-decorators2'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
@@ -21,5 +22,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </p>
   </div>
 `
+
+charmander.scream()
+charmander.speak()
+
 
 setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
