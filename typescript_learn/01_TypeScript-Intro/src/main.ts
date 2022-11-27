@@ -13,7 +13,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <a href="https://www.typescriptlang.org/" target="_blank">
       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
     </a>
-    <h1>Hola ${name}, el pokemon asignado para ti es: ${pokemon1.name}</h1>
+    <h1>Holaa ${name}, el pokemon asignado para ti es: ${pokemon1.name}</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
