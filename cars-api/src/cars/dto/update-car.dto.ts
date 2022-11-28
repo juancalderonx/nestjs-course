@@ -9,9 +9,9 @@ export class UpdatedCarDTO {
 
     @IsString()
     @IsOptional()
-    readonly brand: string;
+    readonly brand?: string;
 
     @IsNumber()
     @IsOptional()
-    readonly model: number;
+    readonly model?: number;
 }

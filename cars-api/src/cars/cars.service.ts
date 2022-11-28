@@ -1,34 +1,29 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { Car } from './interfaces/car.interface';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { v4 as uuid } from 'uuid'
-import { CreateCarDTO } from './dto/create-car.dto';
-import { UpdatedCarDTO } from './dto/update-car.dto';
+
+import { CreateCarDTO, UpdatedCarDTO} from './dto';
+import { Car } from './interfaces/car.interface';
 
 @Injectable()
 export class CarsService {
 
     private cars: Car[] = [
         {
-            "id": uuid(),
-            "brand": "Toyota",
-            "model": 2023
+            id: uuid(),
+            brand: 'Toyota',
+            model: 2023 
         },
         {
-            "id": uuid(),
-            "brand": "BMW",
-            "model": 2021
+            id: uuid(),
+            brand: 'Honda',
+            model: 2022 
         },
         {
-            "id": uuid(),
-            "brand": "Audi",
-            "model": 2022
+            id: uuid(),
+            brand: 'Jeep',
+            model: 2021 
         },
-        {
-            "id": uuid(),
-            "brand": "Mercedes Benz",
-            "model": 2023
-        },
-    ]
+    ];
 
     /** Trae todos los carros que hay en base de datos.
      * @returns JSON con todos los carros.
@@ -68,10 +63,5 @@ export class CarsService {
         return newCar;
     }
 
-    updateById(id: string, updateCarDTO: UpdatedCarDTO) {
-
-        
-
-    }
 
 }
