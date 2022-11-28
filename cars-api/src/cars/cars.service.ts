@@ -39,7 +39,7 @@ export class CarsService {
      * @param id Id del carro a buscar.
      * @returns car - Devuelve el carro encontrado. En caso que no, una excepción personalizada.
      */
-    findOneById( id : string ): {} {
+    findOneById( id : string ) {
         const car = this.cars.find(car => car.id === id);
 
         if(!car) throw new NotFoundException(`Error, no car found with id '${id}'`);
@@ -63,5 +63,22 @@ export class CarsService {
         return newCar;
     }
 
+    update( id: string, updateCarDto: UpdatedCarDTO ) {
+
+        let carDB = this.findOneById( id );
+        
+        this.cars = this.cars.map( car => {
+
+            if ( car.id === id ) {
+                carDB = { ...carDB, ...updateCarDto, id }
+                return carDB;
+            }
+
+            return car;
+
+        });
+        
+        return carDB;
+    }
 
 }
