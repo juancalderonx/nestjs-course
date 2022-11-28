@@ -27,6 +27,8 @@ export class BrandsService {
       createdAt: new Date().getTime()
     }
 
+    this.brands.push(brand);
+
     return brand;
   }
 
@@ -58,11 +60,14 @@ export class BrandsService {
       return brand;
     })
 
+    return brandDB;
+
   }
 
   remove(id: string) {
     this.brands = this.brands.filter( brand => brand.id !== id );
     // Al array de brands le regreso todos los elementos que no tengan el ID que traje. Esto quiere decir que ya no existirá el elemento con ese ID.
     console.log('Marca eliminada correctamente.');
+    return this.brands;
   }
 }
