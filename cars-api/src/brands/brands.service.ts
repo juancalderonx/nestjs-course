@@ -67,7 +67,11 @@ export class BrandsService {
   remove(id: string) {
     this.brands = this.brands.filter( brand => brand.id !== id );
     // Al array de brands le regreso todos los elementos que no tengan el ID que traje. Esto quiere decir que ya no existirá el elemento con ese ID.
-    console.log('Marca eliminada correctamente.');
     return this.brands;
   }
+
+  fillBrandsWithSeedData( brands: Brand[] ) {
+    this.brands = brands;
+  }
+
 }
